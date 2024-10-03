@@ -22,16 +22,25 @@ public class UserInterface
     }
 }
 
-public class Business {
-    public void SignUp(string username, string password) {
+public interface IBusiness
+{
+    void SignUp(string username, string password);
+}
+
+public class Business : IBusiness
+{
+    public void SignUp(string username, string password)
+    {
         DataAccess dataAccess = new DataAccess();
         dataAccess.SignUp(username, password);
     }
 }
 
-public class DataAccess {
+public class DataAccess
+{
 
-    public void SignUp(string username, string password) {
+    public void SignUp(string username, string password)
+    {
         Console.WriteLine("User signed up successfully");
     }
 }
